@@ -1,4 +1,4 @@
-def call(Map config = [name:'Janek']) {
+def call(Map config = [:]) {
     // Any valid steps can be called from this code, just like in other
     // Scripted Pipeline
     env.VERSION = ":)"
