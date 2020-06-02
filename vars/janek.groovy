@@ -4,6 +4,6 @@ def call(Map config = [name:'Janek']) {
     env.VERSION = ":)"
 
     node {
-        echo "Global variable example, ${config.name}."
+        echo "Global variable example, ${config.name}, ${config.env}."
     }
 }
