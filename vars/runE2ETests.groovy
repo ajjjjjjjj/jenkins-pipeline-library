@@ -2,11 +2,11 @@ def call(version) {
 
     log.info("runE2ETests, version" + version)
 
-    pipeline {
-
-        agent none
-
-        stages {
+//    pipeline {
+//
+//        agent none
+//
+//        stages {
             stage('docker pull') {
                 steps {
                     echo 'Docker pull...'
@@ -17,6 +17,6 @@ def call(version) {
                     echo 'run e2e...'
                 }
             }
-        }
-    }
+//        }
+//    }
 }
