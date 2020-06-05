@@ -1,8 +1,10 @@
     pipeline {
         agent none
         parameters {
-            string(name: 'COLONY_COMMAND_VERSION', defaultValue: '0', description: 'Version to test')
-            string(name: 'COLONY_QUERY_VERSION', defaultValue: '0', description: 'Version to test')
+            string(name: 'SERVICE', choices: ['colony-command', 'colony-query'],
+                defaultValue: 'colony-command', description: 'Currently tested service')
+            string(name: 'COLONY_COMMAND_VERSION', defaultValue: 'latest', description: 'Version to test')
+            string(name: 'COLONY_QUERY_VERSION', defaultValue: 'latest', description: 'Version to test')
         }
         stages {
             stage('docker pull') {
@@ -14,6 +16,14 @@
             stage('run e2e') {
                 steps {
                     echo 'run e2e...'
+                }
+            }
+            stage('write version to file') {
+                steps {
+                    script {
+                        writeFile(file: "${params.SERVICE}-version.txt",
+                            text: params.COLONY_QUERY_VERSION, encoding: "UTF-8")
+                    }
                 }
             }
         }
