@@ -1,0 +1,15 @@
+    pipeline {
+        agent none
+        stages {
+            stage('docker pull') {
+                steps {
+                    echo 'Docker pull...'
+                }
+            }
+            stage('run e2e') {
+                steps {
+                    echo 'run e2e...'
+                }
+            }
+        }
+    }
