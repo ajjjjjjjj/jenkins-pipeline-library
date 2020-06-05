@@ -23,7 +23,7 @@
                         git(
                             url: 'https://github.com/ajjjjjjjj/jenkins-pipeline-library.git',
                             //credentialsId: GIT_CREDENTIALS,
-                            branch: BRANCH_NAME
+                            branch: 'master'
                         )
                         writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_QUERY_VERSION, encoding: "UTF-8")
                         echo 'git add...'
