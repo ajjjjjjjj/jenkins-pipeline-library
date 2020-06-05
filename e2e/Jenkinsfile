@@ -33,7 +33,7 @@
                         sh(script: "git add ${params.SERVICE}-version.txt")
                         //echo 'git commit...'
                         sh(script: "git commit -m 'Updated ${params.SERVICE}-version.txt to ${params.COLONY_QUERY_VERSION}'")
-                        sh(script: "git push")
+                        sh(script: "git push origin master")
                     }
                 }
             }
