@@ -22,7 +22,7 @@
                     script {
                         git(
                             url: 'https://github.com/ajjjjjjjj/jenkins-pipeline-library.git',
-                            credentialsId: '12345-1234-4696-af25-123455',
+                            credentialsId: 'aa@bbbb.com',
                             branch: 'master'
                         )
                         writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_QUERY_VERSION, encoding: "UTF-8")
