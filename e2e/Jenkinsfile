@@ -28,7 +28,7 @@
                         writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_QUERY_VERSION, encoding: "UTF-8")
                         //echo 'git add...'
                         //sh(script: "git checkout master")
-                        sh(script: "git config user.email \"abcd@def.com\"")
+                        sh(script: "git config user.email \"ajjjjjjjj@github.com\"")
                         sh(script: "git config user.name \"stefan\"")
                         sh(script: "git add ${params.SERVICE}-version.txt")
                         //echo 'git commit...'
