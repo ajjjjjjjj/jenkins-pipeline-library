@@ -21,8 +21,10 @@
                 steps {
                     script {
                         writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_QUERY_VERSION, encoding: "UTF-8")
-                        sh(script: 'git add "${params.SERVICE}-version.txt"')
-                        sh(script: 'git commit -m "Updated ${params.SERVICE}-version.txt to ${params.COLONY_QUERY_VERSION}"')
+                        echo 'git add...'
+                        sh(script: "git add ${params.SERVICE}-version.txt")
+                        echo 'git commit...'
+                        sh(script: "git commit -m 'Updated ${params.SERVICE}-version.txt to ${params.COLONY_QUERY_VERSION}'")
                     }
                 }
             }
