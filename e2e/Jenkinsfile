@@ -4,7 +4,7 @@
             stage('docker pull') {
                 steps {
                     echo 'Docker pull...'
-                    echo "Project name: ${project}:${env.version}"
+                    echo "Project name: ${env.project}:${env.version}"
                 }
             }
             stage('run e2e') {
