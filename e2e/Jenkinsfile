@@ -1,14 +1,14 @@
     pipeline {
         agent none
         parameters {
-            string(name: 'version', defaultValue: '0', description: 'version to test')
-            string(name: 'project', defaultValue: 'default', description: 'default name ble ble')
+            string(name: 'colony-command-version', defaultValue: '0', description: 'Version to test')
+            string(name: 'colony-query-version', defaultValue: '0', description: 'Version to test')
         }
         stages {
             stage('docker pull') {
                 steps {
                     echo 'Docker pull...'
-                    echo "Project name: ${params.project}:${params.version}"
+                    echo "Project name: ${params.colony-query-version}:${params.colony-command-version}"
                 }
             }
             stage('run e2e') {
