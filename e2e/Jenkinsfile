@@ -56,8 +56,8 @@
                         Map map = [:]
                         map.services = ['a': "1.0", 'aaa_bbb': "2.0"];
                         composeString = "start "
-                        map.services.each { key, value ->
-                            composeString += key.toUpperCase() + "=" + value + " "
+                        map.services.each { service, version ->
+                            composeString += service.toUpperCase() + "=" + version + " "
                         }
                         composeString += " end"
                         echo composeString;
