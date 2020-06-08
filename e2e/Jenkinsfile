@@ -59,7 +59,7 @@
                         map.services.each { key, value ->
                             composeString = composeString + key.toUpperCase() + "=$value "
                         }
-                        composeString.concat(" end")
+                        composeString += " end"
                         echo composeString;
                     }
                 }
