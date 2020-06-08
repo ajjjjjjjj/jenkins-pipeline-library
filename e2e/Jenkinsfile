@@ -1,7 +1,7 @@
     pipeline {
         agent any
         parameters {
-            choice(name: 'SERVICE', choices: ['colony-command', 'colony-query'], description: 'Currently tested service')
+            choice(name: 'SERVICE', choices: ['-', 'colony-command', 'colony-query'], description: 'Currently tested service')
             string(name: 'COLONY_COMMAND_VERSION', defaultValue: 'latest', description: 'Version to test')
             string(name: 'COLONY_QUERY_VERSION', defaultValue: 'latest', description: 'Version to test')
         }
@@ -59,9 +59,13 @@
                         map.services.each { service, version ->
                             composeString += service.toUpperCase() + "=" + version + " "
                         }
-                        params.SERVICE.choices.each { service ->
-                            echo "service:: " + service
-                        }
+                        //params.SERVICE.choices.each { service ->
+                        //    echo "service:: " + service
+                        //}
+                        def overwriteTest   = "janek"
+
+                        overwriteTest = (params.TEST == "-")?:params.TEST
+
                         composeString += " end"
                         echo composeString;
                     }
