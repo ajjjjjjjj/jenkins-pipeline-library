@@ -39,7 +39,7 @@
                         //sh(script: "git config user.name \"stefan\"")
 
                         withCredentials([usernamePassword(credentialsId: 'git-credentials-id', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                            sh(script: "git add ${params.SERVICE}-version.txt")
+                            sh(script: "git add e2e/${params.SERVICE}-version.txt")
                             sh(script: "git commit -m 'Updated ${params.SERVICE}-version.txt to ${params.COLONY_QUERY_VERSION}'")
                             sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ajjjjjjjj/jenkins-pipeline-library.git')
                             //sh(script: "git push origin master")
