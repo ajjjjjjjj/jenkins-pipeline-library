@@ -30,13 +30,13 @@
                         echo "file contents: ${fileContents}"
                         writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_COMMAND_VERSION, encoding: "UTF-8")
                         //echo 'git add...'
-                        //sh(script: "git checkout master")
+                        sh(script: "git checkout master")
                         //sh(script: "git config user.email \"ajjjjjjjj@github.com\"")
                         //sh(script: "git config user.name \"stefan\"")
-                        //sh(script: "git add ${params.SERVICE}-version.txt")
+                        sh(script: "git add ${params.SERVICE}-version.txt")
                         //echo 'git commit...'
-                        //sh(script: "git commit -m 'Updated ${params.SERVICE}-version.txt to ${params.COLONY_QUERY_VERSION}'")
-                        //sh(script: "git push origin master")
+                        sh(script: "git commit -m 'Updated ${params.SERVICE}-version.txt to ${params.COLONY_QUERY_VERSION}'")
+                        sh(script: "git push origin master")
                     }
                 }
             }
