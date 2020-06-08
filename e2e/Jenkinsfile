@@ -27,12 +27,12 @@
                         )
 
                         try {
-                            def fileContents = readFile("${params.SERVICE}-version.txt")
+                            def fileContents = readFile("e2e/${params.SERVICE}-version.txt")
                             echo "file contents: ${fileContents}"
                         } catch (Exception e){
                             echo "file do not exists"
                         }
-                        writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_COMMAND_VERSION, encoding: "UTF-8")
+                        writeFile(file: "e2e/${params.SERVICE}-version.txt", text: params.COLONY_COMMAND_VERSION, encoding: "UTF-8")
                         //echo 'git add...'
                         //sh(script: "git checkout master")
                         //sh(script: "git config user.email \"ajjjjjjjj@github.com\"")
