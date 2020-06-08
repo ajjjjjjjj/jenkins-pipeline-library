@@ -28,7 +28,7 @@
 
                         def fileContents = readFile("${params.SERVICE}-version.txt")
                         echo "file contents: ${fileContents}"
-                        writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_QUERY_VERSION, encoding: "UTF-8")
+                        writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_COMMAND_VERSION, encoding: "UTF-8")
                         //echo 'git add...'
                         //sh(script: "git checkout master")
                         //sh(script: "git config user.email \"ajjjjjjjj@github.com\"")
