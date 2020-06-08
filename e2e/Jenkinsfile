@@ -20,14 +20,19 @@
             stage('Write version to file') {
                 steps {
                     script {
-                        git(
+                        /*git(
                             url: 'https://ajjjjjjjj@github.com/ajjjjjjjj/jenkins-pipeline-library.git',
                             credentialsId: 'git-credentials-id',
                             branch: 'master'
-                        )
+                        )*/
+
+                        Map versions = [:]
 
                         try {
                             def fileContents = readFile("e2e/${params.SERVICE}-version.txt")
+                            def fileContents2 = readFile("e2e/hello-version.txt")
+                            versions.cc = fileContents;
+                            versions.hello = fileContents2;
                             echo "file contents: ${fileContents}"
                         } catch (Exception e){
                             echo "file do not exists"
@@ -44,6 +49,8 @@
                             sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ajjjjjjjj/jenkins-pipeline-library.git')
                             //sh(script: "git push origin master")
                         }
+
+                        echo "Versions: ${versions.cc}, ${versions.hello}";
                     }
                 }
             }
