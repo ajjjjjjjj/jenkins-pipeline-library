@@ -32,7 +32,7 @@
                             def fileContents = readFile("e2e/${params.SERVICE}-version.txt")
                             def fileContents2 = readFile("e2e/hello-version.txt")
                             versions.cc = fileContents;
-                            versions.hello-version = fileContents2;
+                            versions.hello_version = fileContents2;
                             echo "file contents: ${fileContents}"
                         } catch (Exception e){
                             echo "file do not exists"
