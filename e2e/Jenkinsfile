@@ -9,7 +9,7 @@
             stage('docker pull') {
                 steps {
                     echo 'Docker pull...'
-                    echo "Project name: ${params.COLONY_COMMAND_VERSION}:${params.COLONY_QUERY_VERSION}"
+                    echo "Project ${SERVICE}: ${params.COLONY_COMMAND_VERSION}:${params.COLONY_QUERY_VERSION}"
                 }
             }
             stage('run e2e') {
