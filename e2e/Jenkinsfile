@@ -51,7 +51,7 @@
                             //sh(script: "git push origin master")
                         }
 
-                        echo "Versions: ${versions.cc}, ${versions.hello-version}";
+                        echo "Versions: ${versions.cc}, ${versions.hello_version}";
 
                         Map map = [:]
                         map.services = ['a': "1.0", 'aaa_bbb': "2.0"];
