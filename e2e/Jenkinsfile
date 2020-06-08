@@ -64,8 +64,8 @@
                         //}
                         def overwriteTest   = "janek"
 
-                        overwriteTest = (params.TEST == "-")?:params.TEST
-
+                        overwriteTest = (params.SERVICE == "-")?:params.SERVICE
+                        echo "overwriteTest $overwriteTest"
                         composeString += " end"
                         echo composeString;
                     }
