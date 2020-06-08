@@ -1,7 +1,7 @@
     pipeline {
         agent any
         parameters {
-            choice(name: 'SERVICE', choices: ['-', 'colony-command', 'colony-query'], description: 'Currently tested service')
+            choice(name: 'SERVICE', choices: ['x', '-', 'colony-command', 'colony-query'], description: 'Currently tested service')
             string(name: 'COLONY_COMMAND_VERSION', defaultValue: 'latest', description: 'Version to test')
             string(name: 'COLONY_QUERY_VERSION', defaultValue: 'latest', description: 'Version to test')
         }
@@ -64,7 +64,7 @@
                         //}
                         def overwriteTest   = "janek"
 
-                        overwriteTest = (params.SERVICE == "-")?:params.SERVICE
+                        overwriteTest = (params.SERVICE == "x")?:params.SERVICE
                         echo "overwriteTest $overwriteTest"
                         composeString += " end"
                         echo composeString;
