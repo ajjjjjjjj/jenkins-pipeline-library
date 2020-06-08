@@ -32,7 +32,7 @@
                         //echo 'git add...'
                         sh(script: "git checkout master")
                         //sh(script: "git config user.email \"ajjjjjjjj@github.com\"")
-                        //sh(script: "git config user.name \"stefan\"")
+                        sh(script: "git config user.name \"stefan\"")
                         sh(script: "git add ${params.SERVICE}-version.txt")
                         //echo 'git commit...'
                         sh(script: "git commit -m 'Updated ${params.SERVICE}-version.txt to ${params.COLONY_QUERY_VERSION}'")
