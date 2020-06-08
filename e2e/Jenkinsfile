@@ -20,11 +20,11 @@
             stage('Write version to file') {
                 steps {
                     script {
-                        /*git(
+                        git(
                             url: 'https://ajjjjjjjj@github.com/ajjjjjjjj/jenkins-pipeline-library.git',
                             credentialsId: 'git-credentials-id',
                             branch: 'master'
-                        )*/
+                        )
 
                         Map versions = [:]
 
@@ -44,7 +44,7 @@
                         //sh(script: "git config user.name \"stefan\"")
 
                         withCredentials([usernamePassword(credentialsId: 'git-credentials-id', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]) {
-                            sh("git checkout master");
+                            //sh("git checkout master");
                             sh(script: "git add e2e/${params.SERVICE}-version.txt")
                             sh(script: "git commit -m 'Updated ${params.SERVICE}-version.txt to ${params.COLONY_COMMAND_VERSION}'")
                             sh('git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/ajjjjjjjj/jenkins-pipeline-library.git')
