@@ -59,6 +59,9 @@
                         map.services.each { service, version ->
                             composeString += service.toUpperCase() + "=" + version + " "
                         }
+                        SERVICE.choices.each { service ->
+                            echo "service:: " + service
+                        }
                         composeString += " end"
                         echo composeString;
                     }
