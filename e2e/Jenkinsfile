@@ -6,23 +6,23 @@
             string(name: 'COLONY_QUERY_VERSION', defaultValue: 'latest', description: 'Version to test')
         }
         stages {
-            stage('docker pull') {
+            stage('Docker pull') {
                 steps {
                     echo 'Docker pull...'
                     echo "Project ${SERVICE}: ${params.COLONY_COMMAND_VERSION}:${params.COLONY_QUERY_VERSION}"
                 }
             }
-            stage('run e2e') {
+            stage('Run e2e') {
                 steps {
                     echo 'run e2e...'
                 }
             }
-            stage('write version to file') {
+            stage('Write version to file') {
                 steps {
                     script {
                         git(
                             url: 'https://github.com/ajjjjjjjj/jenkins-pipeline-library.git',
-                            credentialsId: '12345',
+                            credentialsId: 'git-credentials-id',
                             branch: 'master'
                         )
 
