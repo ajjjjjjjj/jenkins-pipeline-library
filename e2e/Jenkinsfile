@@ -26,8 +26,12 @@
                             branch: 'master'
                         )
 
-                        def fileContents = readFile("${params.SERVICE}-version.txt")
-                        echo "file contents: ${fileContents}"
+                        try {
+                            def fileContents = readFile("${params.SERVICE}-version.txt")
+                            echo "file contents: ${fileContents}"
+                        } catch (Exeption e){
+                            echo "file do not exists"
+                        }
                         writeFile(file: "${params.SERVICE}-version.txt", text: params.COLONY_COMMAND_VERSION, encoding: "UTF-8")
                         //echo 'git add...'
                         sh(script: "git checkout master")
