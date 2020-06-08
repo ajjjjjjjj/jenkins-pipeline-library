@@ -57,7 +57,7 @@
                         map.services = ['a': "1.0", 'aaa_bbb': "2.0"];
                         composeString = "start "
                         map.services.each { key, value ->
-                            composeString = composeString + key.toUpperCase() + "=$value "
+                            composeString += key.toUpperCase() + "=" + value + " "
                         }
                         composeString += " end"
                         echo composeString;
