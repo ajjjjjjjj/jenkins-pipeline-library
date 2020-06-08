@@ -64,7 +64,7 @@
                         //}
                         def overwriteTest   = "janek"
 
-                        overwriteTest = (params.SERVICE == "x")?:params.SERVICE
+                        overwriteTest = (params.SERVICE == "x")?overwriteTest:params.SERVICE
                         echo "overwriteTest $overwriteTest"
                         composeString += " end"
                         echo composeString;
